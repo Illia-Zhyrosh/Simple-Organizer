@@ -11,3 +11,412 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.navbar{
+  border-style: hidden;
+  background-color: rgb(29, 38, 125);
+  display: flex;
+  justify-content: flex-start;
+  align-content: space-around;
+  justify-items: baseline;
+  min-height: 2rem;
+  padding: 0.5%;
+}
+.navbar > button{
+  font-size: 1.2rem;
+  border-radius: 0.25rem;
+  border-style: hidden;
+  background-color: transparent;
+  color: beige;
+  transition: height, 1s;
+  margin-left: 0.5rem;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  align-self: center;
+}
+.navbar > button:hover{
+  background-color: rgb(0, 173, 181);
+  height: 1.6rem;
+}
+.taskbar{
+  display: flex;
+  justify-items: stretch;
+  align-items: stretch;
+  min-height: max-content;
+  justify-content: stretch;
+  background-color: rgb(44, 41, 41);
+  flex-direction: column;
+}
+
+.root{
+  padding:1px,1px,0,0;
+}
+.main-container{
+  background-color: rgb(44, 41, 41);
+  min-height: 85vh;
+
+}
+.dropdown-container{
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  justify-items: center;
+  align-content: stretch;
+  justify-content: left;
+  border-radius: 0.5rem;
+  background-color: rgb(76, 90, 213);
+  border-style: hidden;
+  min-width: calc(fit-content + 0.1rem);
+  min-height: fit-content;
+  padding-left: 1%;
+  padding-right: 0.2%;
+  overflow: auto;
+  position: absolute;
+  margin-top: -0.25%;
+  transition: 0.7s;
+  z-index: 1;
+  animation: none;
+}
+.dropdown-container.active{
+  visibility: visible;
+  animation-name: dropSlideX;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  
+}
+.dropdown-container.inactive{
+  visibility: hidden;
+  animation: none;
+}
+.dropdown-container > div{
+  display: flex;
+}
+.dropdown-container > div > .menu-button{
+  display: flex;
+  border-radius: 0.25rem;
+  border-style: hidden;
+  margin: auto;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  font-size: 1.2rem;
+  background-color: transparent;
+  margin-left: 0.1rem;
+  margin-top: 0.1rem;
+  justify-self: stretch;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  transition: 0.5s;
+}
+.dropdown-container > div > .menu-button:hover{
+  display: flex;
+  border-radius: 0.25rem;
+  border-style: hidden;
+  align-items: center;
+  font-size: 1.2rem;
+  background-color: transparent;
+  margin-left: 0.1rem;
+  margin-top: 0.1rem;
+  justify-self: stretch;
+  background-color: aquamarine;
+  cursor: pointer;
+}
+.footer{
+  background-color: rgb(32, 30, 30);
+  color: white;
+  display: flex;
+  flex: 1 1;
+  box-shadow: 0 50vh 0 50vh rgb(32, 30, 30);
+  justify-content: center;
+}
+.input-row{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  flex: 1 1 ;
+  width: auto;
+  align-items: center;
+  align-content: space-around;
+  flex-wrap: wrap;
+  padding: 1%;
+  border-color: blue;
+  border-style: none;
+  border-radius: 0.25rem;
+  background-color: rgb(76, 90, 213);
+  height: min-content;
+  
+}
+.input-row > input{
+  display: flex;
+  font-size: 1.3rem;
+  flex-direction: row;
+  border-style: none;
+}
+.input-row>button{
+  display: flex;
+  font-size: 1.65rem;
+  background-color: rgb(86, 95, 213);
+  border-style: none;
+  border-radius: 0.2rem;
+  margin-left: 0.1rem;
+  transition: 0.5s;
+  flex-direction: row;
+  color: wheat;
+  font-weight: bold;
+}
+.input-row>button:hover{
+  background-color: rgb(42, 54, 218);
+}
+.tasks{
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(72, 80, 182);
+  border-style: none;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  padding: 1%;
+  word-wrap: break-word;
+  overflow: auto;
+  justify-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.tasks > ul{
+  
+  font-size: 1.4rem;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  max-height: 68vh;
+  flex: 1 1;
+  justify-items: center;
+  justify-content: center;
+}
+.tasks > ul > li{
+  background-color: rgb(29, 38, 125);
+  color: aliceblue;
+  border-radius: 0.15rem;
+  border-style: none;
+  margin-bottom: 2px;
+  list-style:upper-alpha;
+  padding: 1%;
+  min-width:20rem;
+  text-align: justify;
+  display: flex;
+  float: left;
+}
+.edit-input{
+  position: absolute;
+  background-color: rgb(29, 38, 125);
+  border-style: none;
+  border-radius: 0.3rem;
+  opacity: 0.9;
+  min-width: 30vw;
+  min-height: 20vh;
+  display: flex;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  flex-direction: column;
+  margin-top: 1%;
+  padding: 1%;
+}
+.edit-input > p{
+  font-size: 1.3rem;
+  color: rgb(255, 255, 255);
+}
+.edit-input > input {
+  background-color: rgb(87, 93, 171);
+  margin-bottom: 2%;
+  margin-left: 1%;
+  margin-right: 1%;
+  overflow: auto;
+  font-size: 1.3rem;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+.edit-input > button {
+  border-radius: 1rem;
+  border-style: none;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  font-size: 1.3rem;
+  transition: 0.65s;
+  background-color: transparent;
+  min-width: 1rem; 
+  color: wheat;
+  padding: 1%;
+}
+.edit-input > button:hover {
+  background-color: rgb(255, 255, 255);
+  color: green;
+  transform: scaleX(105%)
+}
+
+
+.taskbuttons-panel{
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  margin-left: auto;
+}
+.taskbuttons-panel > button{
+  border-radius: 1rem;
+  border-style: none;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  font-size: 1.5rem;
+  transition: 0.65s;
+  background-color: transparent;
+  min-width: 1rem; 
+  color: wheat;
+}
+.removeTaskButton:hover{
+  color: red;
+  background-color: rgb(227, 228, 243);
+}
+.editTaskButton:hover{
+  color: yellow;
+  background-color: rgb(138, 139, 147);
+}
+.taskbuttons-panel >.completeTaskButton:hover{
+  color: green;
+  background-color: rgb(227, 228, 243);
+}
+.stat-dropdown{
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  justify-items: flex-start;
+  justify-content: flex-start;
+  border-radius: 0.5rem;
+  background-color: rgb(76, 90, 213);
+  border-style: hidden;
+  min-height: min-content;
+  min-width: 20rem;
+  max-width: 30rem;
+  padding-left: 1%;
+  padding-right: 0.2%;
+  margin-top: -0.25%;
+  transition: 0.7s;
+  z-index: 1;
+  overflow: auto;
+  word-wrap: break-word;
+  animation-name: dropSlideX-Stats;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+.statElem{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  padding: 1%;
+}
+.stat-dropdown > ul{
+  list-style: none;
+  font-size: 1.3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  max-width: 20rem;
+  padding: 2%;
+  flex: 1 1;
+  opacity: 1;
+  float: left;
+  color: aliceblue;
+  
+}
+.stat-dropdown  > ul  > div > li {
+  display: flex;
+  background-color: rgb(58, 46, 99);
+  color: aliceblue;
+  border-radius: 0.15rem;
+  border-style: none;
+  margin-bottom: 2px;
+  align-items: center;
+  align-self: stretch;
+  min-width: 18.2rem;
+  padding: 2%;
+  display: flex;
+  align-items: center;
+  word-wrap: break-word;
+  font-weight: bold;
+  word-break: keep-all;
+}
+.stat-dropdown  > ul  > div > li > svg{
+  min-width: 1.4rem;
+  fill-opacity: 1;
+  fill-rule: evenodd;
+  fill: goldenrod;
+  float: right;
+  margin-left: auto;
+}
+
+@keyframes spinLogo {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
+@keyframes dropSlideX{
+  from{
+    transform: translateX(-200px);
+  }
+  to{
+    transform: translateX(0px);
+  }
+}
+@keyframes dropSlideX-Stats{
+  from{
+    transform: translateX(-600px);
+  }
+  to{
+    transform: translateX(0px);
+  }
+}
+.react-icon{
+  width: 2rem;
+  height: 2rem;
+  margin-left: auto;
+  animation-name: spinLogo;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+.footer-div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
