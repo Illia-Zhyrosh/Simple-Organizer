@@ -266,6 +266,7 @@ function App(){
     if(e.target.value !== "" && e.keyCode === 13){
       CreateTask();
     }
+    
   }
   // Conditional rendering of taskbar based on user's actions
   function TaskBar()
@@ -306,13 +307,16 @@ function App(){
   // Reading task from input bar, adding task value to array.
 function CreateTask(){
   var inputBar = document.getElementById('taskInput');
-  if(inputBar.value !== null && inputBar.value !== ""){
+  if(inputBar.value !== null && inputBar.value.trim() !== ""){
     
     let tasks = list;
     tasks.push(value);
     setList(tasks);
     setValue("");
     SetTasksStorage(list);
+  }
+  else{
+    inputBar.value = inputBar.value.trim();
   }
 }
 }
